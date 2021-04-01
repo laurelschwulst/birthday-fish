@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Miracle Light in Cemetery</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <style>
+    * { box-sizing: border-box; }
+      html, body {
+        height: 100vh;
+        margin: 0;
+      }
+      body {
+        background: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 2em;
+        overflow: hidden;
+      }
+      video {
+        border-radius: 50%;
+        filter: blur(15px);
+      }
+      video.living {
+        animation: live_two 20s alternate infinite;
+      }
+      @keyframes live_two {
+        0% {
+          filter: blur(15px);
+          transform: skew(0deg, 0deg);
+        }
+        50% {
+          filter: blur(20px);
+          transform: skew(30deg, 20deg);
+        }
+        60% {
+          filter: blur(5px);
+          transform: skew(-30deg, -50deg);
+        }
+        75% {
+          filter: blur(35px);
+          transform: skew(-70deg, -40deg);
+
+        }
+        85% {
+          transform: skew(12deg, -20deg);
+
+        }
+        100% {
+          transform: skew(0deg, 0deg);
+          filter: blur(15px);
+        }
+      }
+      @keyframes live {
+        0% {
+          filter: blur(15px);
+          transform: skew(0deg, 0deg);
+        }
+        50% {
+          filter: blur(20px);
+          transform: skew(30deg, 20deg);
+        }
+        60% {
+          filter: blur(5px);
+          transform: skew(80deg, 30deg);
+          transform: skew(173deg, 90deg);
+          transform: skew(105deg, 60deg);
+        }
+        75% {
+          filter: blur(35px);
+          transform: skew(105deg, 60deg);
+
+        }
+        85% {
+          transform: skew(105deg, 60deg);
+
+        }
+        95% {
+          transform: skew(-30deg, -50deg);
+        }
+        100% {
+          transform: skew(0deg, 0deg);
+          filter: blur(15px);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="max-width: 740px; margin: 0 auto;">
+      <video width="100%" height="auto" loop id="fish">
+        <source src="2021-03-13.mov" type="video/mp4">
+      </video> 
+    </div>
+    <script src="jquery.min.js"></script>
+    <script>
+    $(function(){
+      $('video').click(function(){
+        $('#fish').playbackRate = 0.25;
+        $('#fish').get(0).play();
+        $('video').addClass('living');
+      });
+    });
+    </script>
+  </body>
+</html>
