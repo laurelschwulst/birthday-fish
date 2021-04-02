@@ -5,8 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <style>
-    * { box-sizing: border-box; }
-      html, body {
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
         height: 100vh;
         margin: 0;
       }
@@ -41,11 +44,9 @@
         75% {
           filter: blur(35px);
           transform: skew(-70deg, -40deg);
-
         }
         85% {
           transform: skew(12deg, -20deg);
-
         }
         100% {
           transform: skew(0deg, 0deg);
@@ -70,11 +71,9 @@
         75% {
           filter: blur(35px);
           transform: skew(105deg, 60deg);
-
         }
         85% {
           transform: skew(105deg, 60deg);
-
         }
         95% {
           transform: skew(-30deg, -50deg);
@@ -88,20 +87,21 @@
   </head>
 
   <body>
-    <div style="max-width: 740px; margin: 0 auto;">
+    <div style="max-width: 740px; margin: 0 auto">
       <video width="100%" height="auto" loop id="fish" playsinline>
-        <source src="2021-03-13.mp4" type="video/mp4">
-      </video> 
+        <source src="2021-03-13.mp4" type="video/mp4" />
+        <source src="2021-03-13.ogv" type="video/ogg" />
+      </video>
     </div>
     <script src="jquery.min.js"></script>
     <script>
-    $(function(){
-      $('video').click(function(){
-        $('#fish').playbackRate = 0.25;
-        $('#fish').get(0).play();
-        $('video').addClass('living');
+      $(function () {
+        $("video").click(function () {
+          $("#fish").playbackRate = 0.25;
+          $("#fish").get(0).play();
+          $("video").addClass("living");
+        });
       });
-    });
     </script>
   </body>
 </html>
